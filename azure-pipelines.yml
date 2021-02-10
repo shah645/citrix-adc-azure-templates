@@ -17,3 +17,13 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Subscription'
+    azureResourceManagerConnection: 'DevOps Gov Cloud Integration Testing'
+    subscriptionId: '77b97e14-c1f9-47ed-b949-4594f303f53b'
+    location: 'East US'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'azuredeploy.json'
+    csmParametersFileLink: 'azuredeploy.parameters.json'
+    deploymentMode: 'Incremental'
